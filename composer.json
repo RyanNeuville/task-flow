@@ -1,0 +1,16 @@
+{
+    "name": "xmind/task-flow",
+    "description": "Application web complète de Gestionnaire de tâches collaboratif",
+    "autoload": {
+        "psr-4": {
+            "Xmind\\TaskFlow\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "RyanNeuville",
+            "email": "neuvilleryan123@gmail.com"
+        }
+    ],
+    "require": {}
+}
