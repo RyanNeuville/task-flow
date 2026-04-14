@@ -1,16 +1,47 @@
 {
-    "name": "xmind/task-flow",
-    "description": "Application web complète de Gestionnaire de tâches collaboratif",
-    "autoload": {
-        "psr-4": {
-            "Xmind\\TaskFlow\\": "src/"
-        }
+  "name": "xmind/task-flow",
+  "description": "TaskFlow - Gestionnaire de tâches collaboratif en PHP vanilla",
+  "type": "project",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
     },
-    "authors": [
-        {
-            "name": "RyanNeuville",
-            "email": "neuvilleryan123@gmail.com"
-        }
+    "files": [
+      "src/functions/helpers.php",
+      "src/functions/auth.php",
+      "src/functions/validations.php",
+      "src/functions/csrf.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Ryan Neuville",
+      "email": "neuvilleryan123@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^8.2",
+    "vlucas/phpdotenv": "^5.6"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^10.5"
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
     ],
-    "require": {}
+    "test": "phpunit"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "minimum-stability": "stable"
 }
